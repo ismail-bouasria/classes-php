@@ -135,7 +135,7 @@ class Userpdo
         $getlogin->execute();
         $log= $getlogin->fetch();
          
-        return $log['login'];
+        return $log;
     }
    
   
@@ -147,7 +147,7 @@ class Userpdo
         $getmail->execute();
         $mail= $getmail->fetch();
         
-        return $mail['email'];
+        return $mail;
       
     }
   
@@ -159,7 +159,7 @@ class Userpdo
         $getfirst->execute();
         $first= $getfirst->fetch();
         
-        return $first['firstname'];
+        return $first;
         
     }
   
@@ -169,9 +169,9 @@ class Userpdo
         $id = $_SESSION['id'];
         $getlast= $this->bdd->prepare("SELECT 'lastname' FROM utilisateurs WHERE id='$id'");
         $getlast->execute();
-        $last= $getfirst->fetch();
+        $last= $getlast->fetch();
         
-        return $last['lastname'];
+        return $last;
        
     }
 }
